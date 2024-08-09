@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <title>Webteknologi - HTML</title>
+    <link rel="stylesheet" type="text/css" href="../kurs.css">
+  </head>
+  <body>
+    <h1>Hva er HTML?</h1>
+    <h2>Hyper Text Markup Language</h2>
+    <p>Tagger som beskriver innhold på internett.</p>
+    <h2>HTML</h2>
+    <textarea id="htmlInput" placeholder="Skriv inn HTML her..." rows="10" cols="50"></textarea>
+    <button onclick="visResultat()">Vis resultat</button>
+
+    <textarea id="cssInput" placeholder="Skriv inn CSS her..." rows="10" cols="50"></textarea>
+    <button onclick="visResultat()">Vis resultat</button>
+    
+    <style id="cssDiv"></style>
+    <div id="resultat"></div>
+
+    <script>
+        function visResultat() {
+            const htmlInput = document.getElementById('htmlInput').value;
+            const cssInput = document.getElementById('cssInput').value;
+            
+            const resultatDiv = document.getElementById('resultat');
+            resultatDiv.innerHTML = '<style>' + cssInput + '</style>' + htmlInput;
+        }
+    </script>
+</html>

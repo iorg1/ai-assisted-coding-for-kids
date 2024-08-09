@@ -1,0 +1,83 @@
+
+body {
+  padding: 0;
+  margin: 0;
+  color: white;
+  font-size: 24px;
+}
+
+.himmel {
+  background-color: rgb(32, 27, 63);
+  height: 40%;
+  position: relative;
+  padding: 4%;
+}
+
+.himmellegeme {
+  background-color: white;
+  position: absolute;
+  top: 18%;
+  right: 15%;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+}
+
+.skog {
+  background-color: darkgreen;
+  height: 5%;
+}
+
+.strand {
+  background-color: sandybrown;
+  height: 10%;
+  z-index: 1;
+}
+
+.havet {
+  background-color: darkblue;
+  height: 45%;
+  overflow-x: clip;
+  position: relative; /* Needed for absolute positioning of pseudo-elements */
+  z-index: 1;
+}
+
+.havet::before {
+  content: "";
+  position: absolute;
+  top: 0; /* Start from below */
+  left: -200%;
+  width: 500%; /* Cover the full width of .havet */
+  height: 100%; /* Extend vertically for the animation */
+  background-color: darkblue;
+  border-radius: 70%;
+  animation: wave 5s infinite linear, moveWaves 8s infinite linear;
+  z-index: 10;
+}
+
+@keyframes wave {
+  0%, 100% {
+    border-radius: 30% 30% 70% 70%;
+    left: -400%;
+  }
+  50% {
+    border-radius: 40% 40% 60% 60%;
+    left: 0%;
+  }
+}
+
+
+@keyframes moveWaves {
+  0%, 100% {
+    top: -10%;
+  }
+  50% {
+    top: 0;
+  }
+}
+
+.strand {
+  background-color: sandybrown;
+  height: 10%;
+  /* Adjustments for smoother transition to waves can be added here if necessary */
+}
