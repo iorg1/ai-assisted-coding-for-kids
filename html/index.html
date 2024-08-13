@@ -2,20 +2,26 @@
   <head>
     <title>Webteknologi - HTML</title>
     <link rel="stylesheet" type="text/css" href="../kurs.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap" rel="stylesheet">
   </head>
   <body>
     <h1>Hva er HTML?</h1>
-    <h2>Hyper Text Markup Language</h2>
-    <p>Tagger som beskriver innhold på internett.</p>
-    <h2>HTML</h2>
-    <textarea id="htmlInput" placeholder="Skriv inn HTML her..." rows="10" cols="50"></textarea>
-    <button onclick="visResultat()">Vis resultat</button>
+    <div class="innhold-stort">
+      <h2>Hyper Text Markup Language</h2>
 
-    <textarea id="cssInput" placeholder="Skriv inn CSS her..." rows="10" cols="50"></textarea>
-    <button onclick="visResultat()">Vis resultat</button>
-    
-    <style id="cssDiv"></style>
-    <div id="resultat"></div>
+      <p>Tagger som beskriver innhold på internett.</p>
+      <h2>HTML</h2>
+      <textarea id="htmlInput" placeholder="Skriv inn HTML her..." rows="10" cols="50"></textarea>
+      <button onclick="visResultat()">Vis resultat</button>
+
+      <textarea id="cssInput" placeholder="Skriv inn CSS her..." rows="10" cols="50"></textarea>
+      <button onclick="visResultat()">Vis resultat</button>
+      
+      <style id="cssDiv"></style>
+      <div id="resultat"></div>
+    </div>
 
     <script>
         function visResultat() {
@@ -26,4 +32,6 @@
             resultatDiv.innerHTML = '<style>' + cssInput + '</style>' + htmlInput;
         }
     </script>
+
+    <p class="videre-link">Når du er klar, kan vi gå <a href="../Oppgave1/index.html">videre</a> til neste oppgave.</p>
 </html>
