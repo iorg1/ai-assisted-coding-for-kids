@@ -20,7 +20,6 @@ jobs:
 
     - name: Create zip file
       run: |
-        mkdir -p output
         zip -r download/kodekurs.zip src
 
     - name: Commit zip file
