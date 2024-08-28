@@ -1,0 +1,32 @@
+name: Zip Subfolder and Commit
+
+on:
+  push:
+    branches:
+      - main  # Change this to your target branch
+
+jobs:
+  zip_and_commit:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14'
+
+    - name: Create zip file
+      run: |
+        mkdir -p output
+        zip -r download/kodekurs.zip src
+
+    - name: Commit zip file
+      run: |
+        git config --global user.name 'github-actions[bot]'
+        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+        git add download/kodekurs.zip
+        git commit -m "Add zip file of subfolder"
+        git push
