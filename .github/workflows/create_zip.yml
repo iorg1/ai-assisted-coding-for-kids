@@ -25,8 +25,8 @@ jobs:
         git config --global user.name "iorg1"
         git config --global user.email "jorgen@feedbach.me"
         git remote set-url origin git@github.com:iorg1/kodekurs.git
-        git checkout kurs
+        git checkout -b kurs
         git add -f download/kodekurs.zip
         git commit -m "Add zip file of subfolder"
-        git push
+        git push --set-upstream origin kurs
 
