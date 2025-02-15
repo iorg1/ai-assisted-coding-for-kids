@@ -1,0 +1,240 @@
+
+body {
+  padding: 0;
+  margin: 0;
+  color: black;
+  font-size: 24px;
+  height: 100%;
+  position: absolute;
+  top:0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
+.himmel {
+  background-color: rgb(32, 27, 63);
+  height: 40%;
+  position: relative;
+  padding: 4%;
+}
+
+.himmellegeme {
+  background-color: white;
+  position: absolute;
+  top: 18%;
+  right: 15%;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+}
+
+.skog {
+  background-color: darkgreen;
+  height: 10%;
+  position: absolute;
+  bottom: 44%;
+  width: 100%;
+}
+
+.strand {
+  height: 15%;
+  z-index: 1;
+  bottom: 22%;
+  position: absolute;
+  background-color: #FFFACD; /* Lys sandfarge */
+}
+
+.havet {
+  background-color: #1E90FF;
+  height: 25%;
+  bottom: 0;
+  overflow-x: clip;
+  position: absolute; /* Needed for absolute positioning of pseudo-elements */
+  z-index: 1;
+}
+
+.havet::before {
+  content: "";
+  position: absolute;
+  top: 0; /* Start from below */
+  left: -200%;
+  width: 500%; /* Cover the full width of .havet */
+  height: 100%; /* Extend vertically for the animation */
+  background-color: #1E90FF;
+  border-radius: 70%;
+  animation: wave 5s infinite linear, moveWaves 8s infinite linear;
+  z-index: 10;
+}
+
+@keyframes wave {
+  0%, 100% {
+    border-radius: 30% 30% 70% 70%;
+    left: -400%;
+  }
+  50% {
+    border-radius: 40% 40% 60% 60%;
+    left: 0%;
+  }
+}
+
+
+@keyframes moveWaves {
+  0%, 100% {
+    top: -10%;
+  }
+  50% {
+    top: 0;
+  }
+}
+
+/* Eksempel på en sandfarget bakgrunn */
+.strand {
+  width: 100%;
+  height: 300px;
+  background: #f2e0ac; /* Sandfarge */
+  /* Evt. legg inn en bakgrunnstekstur: 
+     background: url("sand-texture.jpg") no-repeat center/cover; 
+  */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Container som holder bokstavene samlet */
+.sos-container {
+  display: flex;
+  gap: 20px; /* litt mellomrom mellom bokstavene */
+}
+
+/* Store bokstaver som skal se “risset” i sanden ut */
+.sand-bokstav {
+  font-size: 200px;
+  font-weight: bold;
+  color: #e0c98f; /* Lysere sandfarge – bokstavene blandes litt i sanden */
+  position: relative;
+  /* Tekstskygge for å simulere litt “dybde” */
+  text-shadow: 
+      1px 1px 0 #d2b581,   /* en anelse mørkere sandfarge */
+      2px 2px 2px rgba(0,0,0,0.25); /* litt myk skygge */
+}
+
+/* Eksempel: Legg til en liten “fordypningseffekt” ved å bruke en slags indre skygge. 
+   Dette krever litt triks med ::after- eller ::before-pseudoelement.  
+*/
+.sand-bokstav::before {
+  content: "";
+  position: absolute;
+  inset: 0; /* fyller hele bokstavenes område */
+  background: radial-gradient(rgba(0,0,0,0.1), transparent 70%);
+  opacity: 0.3;
+  mix-blend-mode: multiply; /* gjør at det blander seg med bokstavene under */
+  pointer-events: none;
+}
+
+/* 1) Gjør det til dag ved å bruke lyse farger */
+
+.himmel {
+  /* Lyseblå himmel */
+  background: linear-gradient(to bottom, #87CEEB, #ffffff);
+  width: 100%;
+  height: 300px;
+  position: relative;
+  overflow: hidden;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+
+/* “Sol” */
+.himmellegeme {
+  width: 100px;
+  height: 100px;
+  background-color: #FFD700; /* Gullfarge som kan illudere sol */
+  border-radius: 50%;
+  position: absolute;
+  top: 40px;
+  left: 70%;
+}
+
+/* Havet */
+.havet {
+  background-color: #1E90FF; /* Havblå */
+  width: 100%;
+  height: 300px;
+}
+
+/* 2) Blinkende tekst for å bli oppdaget */
+.signal {
+  position: absolute;
+  top: 150px;       /* Juster etter ønske */
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 28px;
+  font-weight: bold;
+  color: red;
+  background-color: rgba(255,255,255,0.8);
+  padding: 10px;
+  border-radius: 8px;
+  animation: blink 1s infinite;
+}
+
+/* Animasjon for blinking */
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+.fly {
+  position: absolute;
+  /* Animasjonen gjør at flyet flyr fra venstre til høyre over skjermen */
+  animation: fly-across 5s linear forwards;
+}
+
+/* CSS for flyet */
+.fly {
+  position: relative;
+  width: 20px;
+  height: 3px;
+  background: #333;
+  border-radius: 5px;
+}
+
+/* Øverste vinge */
+.fly::before {
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: 4px;
+  width: 10px;
+  height: 2px;
+  background: #333;
+  border-radius: 2px;
+  transform: rotate(60deg);
+}
+
+/* Nederste vinge */
+.fly::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 4px;
+  width: 10px;
+  height: 2px;
+  background: #333;
+  border-radius: 2px;
+  transform: rotate(-60deg);
+}
+
+/* Definerer flyets bevegelse fra venstre til høyre */
+@keyframes fly-across {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(110vw);
+  }
+}

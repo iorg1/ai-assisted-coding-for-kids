@@ -1,0 +1,131 @@
+body {
+  padding: 0;
+  margin: 0;
+  color: white;
+  font-size: 24px;
+}
+
+.himmel {
+  background-color: rgb(135, 206, 235); /* Lys blå farge for daghimmel */
+  height: 40%;
+  position: relative;
+  padding: 4%;
+}
+
+.himmellegeme {
+  background-color: yellow; /* Gul farge for solen */
+  position: absolute;
+  top: 18%;
+  right: 15%;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  box-shadow: 0 0 50px yellow;
+  animation: moveSun 600s linear infinite;
+}
+
+@keyframes moveSun {
+  0% {
+    left: -10px;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+.skog {
+  background-color: darkgreen;
+  height: 5%;
+}
+
+.strand {
+  background-color: sandybrown;
+  height: 10%;
+  z-index: 1;
+}
+
+.havet {
+  background-color: darkblue;
+  height: 45%;
+  overflow-x: clip;
+  position: relative;
+  z-index: 1;
+}
+
+.havet::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -200%;
+  width: 500%;
+  height: 100%;
+  background-color: darkblue;
+  border-radius: 70%;
+  animation: wave 5s infinite linear, moveWaves 8s infinite linear;
+  z-index: 10;
+}
+
+@keyframes wave {
+  0%, 100% {
+    border-radius: 30% 30% 70% 70%;
+    left: -400%;
+  }
+  50% {
+    border-radius: 40% 40% 60% 60%;
+    left: 0%;
+  }
+}
+
+@keyframes moveWaves {
+  0%, 100% {
+    top: -10%;
+  }
+  50% {
+    top: 0;
+  }
+}
+
+.boat {
+  position: absolute;
+  bottom: 20%;
+  left: -100px;
+  width: 100px;
+  height: 20px; /* Gjør båten flatere */
+  background-color: #8B4513; /* Mørk brun farge for båten */
+  border-radius: 10px 10px 0 0; /* Runde hjørner på toppen */
+  animation: moveBoat 10s linear infinite;
+  z-index: 100; /* Sørg for at båten er over bølgene */
+}
+
+.boat::before {
+  content: "";
+  position: absolute;
+  top: -50px; /* Plasser seilet over båten */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-bottom: 50px solid white; /* Hvitt seil */
+}
+
+.boat::after {
+  content: "";
+  position: absolute;
+  top: -30px; /* Plasser masten */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 5px;
+  height: 30px;
+  background-color: #8B4513; /* Mørk brun farge for masten */
+}
+
+@keyframes moveBoat {
+  0% {
+    left: -100px;
+  }
+  100% {
+    left: 100%;
+  }
+}
