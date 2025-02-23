@@ -21,7 +21,7 @@ body {
   width: 100px;
   border-radius: 50%;
   box-shadow: 0 0 50px yellow;
-  animation: moveSun 600s linear infinite;
+  animation: moveSun 1200s linear infinite;
 }
 
 @keyframes moveSun {
@@ -46,38 +46,46 @@ body {
 
 .havet {
   background-color: darkblue;
-  height: 45%;
+  height: 40%;
   overflow-x: clip;
   position: relative;
   z-index: 1;
+  bottom: 0;
 }
 
+/* Bølger i havet */
 .havet::before {
   content: "";
   position: absolute;
+  opacity: 0.7;
   top: 0;
   left: -200%;
-  width: 500%;
+  width: 300%;
   height: 100%;
+  border-top: 5px dashed white;
   background-color: darkblue;
   border-radius: 70%;
-  animation: wave 5s infinite linear, moveWaves 8s infinite linear;
+  animation: wave 5s infinite ease-out, moveWaves 8s infinite linear;
   z-index: 10;
 }
 
 @keyframes wave {
-  0%, 100% {
+  0%,
+  100% {
     border-radius: 30% 30% 70% 70%;
     left: -400%;
+    top: -200px;
   }
   50% {
     border-radius: 40% 40% 60% 60%;
     left: 0%;
+    top: 200px;
   }
 }
 
 @keyframes moveWaves {
-  0%, 100% {
+  0%,
+  100% {
     top: -10%;
   }
   50% {
@@ -85,15 +93,16 @@ body {
   }
 }
 
+/* Båten */
 .boat {
   position: absolute;
-  bottom: 20%;
+  bottom: 30%;
   left: -100px;
   width: 100px;
   height: 20px; /* Gjør båten flatere */
-  background-color: #8B4513; /* Mørk brun farge for båten */
+  background-color: #8b4513; /* Mørk brun farge for båten */
   border-radius: 10px 10px 0 0; /* Runde hjørner på toppen */
-  animation: moveBoat 10s linear infinite;
+  animation: moveBoat 120s linear infinite;
   z-index: 100; /* Sørg for at båten er over bølgene */
 }
 
@@ -118,7 +127,7 @@ body {
   transform: translateX(-50%);
   width: 5px;
   height: 30px;
-  background-color: #8B4513; /* Mørk brun farge for masten */
+  background-color: #8b4513; /* Mørk brun farge for masten */
 }
 
 @keyframes moveBoat {
@@ -128,4 +137,82 @@ body {
   100% {
     left: 100%;
   }
+}
+/********** HAI-BASIS **********/
+.shark {
+  position: absolute;
+  left: -150px; /* Starter utenfor skjermen til venstre */
+  width: 80px;
+  height: 20px;
+  background-color: #0000aa; /* Fargen på haien */
+  border-radius: 40%; /* Litt avrunding */
+  z-index: 50;
+
+  /* Animajon: Grunnanimasjon (kan variere for hver hai) */
+  animation: swimShark 2s linear infinite;
+}
+
+/* Halefinne (bak) */
+.shark::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: -10px;
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  transform: rotate(180deg);
+  border-right: 10px solid #0000aa; /* Trekant for halen */
+}
+
+/* Ryggfinne (topp) */
+.shark::before {
+  content: "";
+  position: absolute;
+  top: -20px;
+  left: 40px;
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 20px solid #aaa; /* Ryggfinne */
+}
+
+/* Grunnleggende animasjon for en hai som "svømmer" */
+@keyframes swimShark {
+  0% {
+    left: -150px; /* Utenfor venstre kant */
+    bottom: 15%;
+  }
+  50% {
+    bottom: 20%; /* Liten bølgebevegelse opp midtveis */
+  }
+  100% {
+    left: 100%; /* Svømmer til høyre */
+    bottom: 15%; /* ...og ned igjen */
+  }
+}
+
+/********** FORSKJELLIGE HAIER **********/
+/* Hai 1 */
+.shark1 {
+  /* Arver alt fra .shark, men kan overstyre litt */
+  animation-duration: 25s; /* Svømmer litt raskere */
+  animation-delay: 0s; /* Starter med en gang */
+  bottom: 15%;
+}
+
+/* Hai 2 */
+.shark2 {
+  animation-duration: 35s; /* Svømmer litt saktere */
+  animation-delay: 5s; /* Venter 5 sek før den dukker opp */
+  bottom: 12%; /* Litt lavere i vannet */
+}
+
+/* Hai 3 */
+.shark3 {
+  animation-duration: 30s; /* Midt i mellom */
+  animation-delay: 10s; /* Venter 10 sek før start */
+  bottom: 18%; /* Litt høyere i vannet */
 }
