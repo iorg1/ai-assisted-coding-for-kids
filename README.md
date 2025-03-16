@@ -1,119 +1,125 @@
-# AI-assistert kurs i webutvikling
+# AI-Assisted Web Development Course
 
-Dette kurset tar for seg grunnleggende webutvikling. Oppgavene kan være kompliserte, men ved hjelp av AI-assistenter som ChatGPT eller Copilot vil man kunne løse oppgavene uten å kjenne alle detaljene i løsningen. Kurset anbefales for barn i alderen 10-15 år. Man bør sette av 2-3 timer for gjennomføring.
+This course covers basic web development. Tasks might seem complicated, but with assistance from AI tools like ChatGPT or Copilot, you can complete them without needing to understand every detail of the solution. The course is recommended for children aged 10-15 years. You should allocate 2-3 hours for completion.
 
-Her er en steg-for-steg gjennomføring av AI-assistert kodekurs i webutvikling.
+Below is a step-by-step guide for an AI-assisted coding course in web development.
 
-## 1. Invitere deltakerne
+## 1. Invite Participants
 
-Deltakerne trenger:
-* En enkel datamaskin.
-* En teksteditor.
-* Tilgang til ChatGPT eller annen tilsvarende AI-assistent.
+Participants will need:
 
-Det anbefales at deltakerne har installert VS Code, Google Chrome og en betalt versjon av ChatGPT (gratisversjonen har et begrenset antall prompts, som gjør at man kanskje ikke blir ferdig).
+- A simple computer.
+- A text editor.
+- Access to ChatGPT or a similar AI assistant.
 
-## 2. Forberedelse
+It is recommended that participants install VS Code, Google Chrome, and a paid version of ChatGPT (the free version has a limited number of prompts, potentially hindering completion).
 
-Dette kan enten gjøres i fellesskap før kurset starter, eller deltakerne kan få beskjed om å gjøre det på forhånd.
+## 2. Preparation
 
-Kursfilene må lastes ned fra https://github.com/iorg1/kodekurs/download/kodekurs.zip og filene må pakkes ut.
+This step can be done collectively before the course starts or participants can be instructed to do it beforehand.
 
-Det er viktig at man ikke åpner innholdet i zip-filen direkte, for dette gjør at referanser til CSS og javascript-filer ikke fungerer.
+Course files should be downloaded from https://github.com/iorg1/kodekurs/download/kodekurs.zip and extracted.
 
-## 3. Gjennomføring av kurset
+It is important not to open the contents of the zip file directly, as this may cause references to CSS and JavaScript files to malfunction.
 
-Kurset er delt inn i følgende kapitler:
+## 3. Conducting the Course
 
-1. Introduksjon til HTML og CSS.
-2. Introduksjon til AI og ChatGPT.
-3. Oppgave 1 - Bli oppdaget på en øde øy.
-4. Oppgave 2 - Lage et enkelt spill.
+The course is divided into the following chapters:
 
-### Introduksjon til HTML og CSS.
+1. Introduction to HTML and CSS.
+2. Introduction to AI and ChatGPT.
+3. Task 1 - Being discovered on a deserted island.
+4. Task 2 - Creating a simple game.
 
-Hensikten med denne delen er å bli litt kjent med HTML og tags. Ved å åpne filen `html/index.html` får man opp ett tekstområde der man kan skrive inn HTML og ett tekstområde der man kan skrive inn CSS.
+### Introduction to HTML and CSS
 
-*Oppgave:* Skriv inn `<h1>Hallo verden</h1>` og klikk "Vis resultat".
+The purpose of this section is to become familiar with HTML and tags. By opening the file `html/index.html`, you will see a text area for entering HTML and another for CSS.
 
-Forklar konseptet med tagger, at de har en type, at de må balanseres, slik som parenteser i et mattestykke, og at de kan ha foreldre, søsken og barn.
+_Task:_ Enter `<h1>Hello World</h1>` and click "Show result."
 
-*Oppgave:* Endre fra `h1` til `h2` og legg til HTML
+Explain the concept of tags, their types, balanced structures (similar to parentheses in mathematics), and relationships such as parents, siblings, and children.
+
+_Task:_ Change `h1` to `h2` and add HTML:
+
 ```
-<p>Jeg heter...</p>
-<p>Jeg liker...</p>
+<p>My name is...</p>
+<p>I like...</p>
 <ul>
-  <li>Godteri</li>
-  <li>Fisk</li>
-  <li>Brokkoli</li>
+  <li>Candy</li>
+  <li>Fish</li>
+  <li>Broccoli</li>
 </ul>
 ```
-Hva skjer hvis man bytter `<ul>` med `<ol>`?
 
-*Oppgave:* Legg til CSS
+What happens if you replace `<ul>` with `<ol>`?
 
-```
-  h2 { color: red; }
-```
-
-Forklar hvordan en selector fungerer, og hvordan man kan definere farger. I VS Code får man opp en fargevelger, slik at man kan prøve litt forskjellig.
-
-*Oppgave:* Legg til CSS
+_Task:_ Add CSS:
 
 ```
-  p { background-color: yellow; }
-  li { text-align: center; }
+h2 { color: red; }
 ```
 
-*Oppgave:* Endre HTML
+Explain how selectors work and how colors can be defined. In VS Code, a color picker will appear, allowing experimentation.
+
+_Task:_ Add CSS:
 
 ```
-<p>Jeg heter <span>[navn]</span></p>
+p { background-color: yellow; }
+li { text-align: center; }
 ```
 
-Legg til CSS:
+_Task:_ Modify HTML:
+
+```
+<p>My name is <span>[name]</span></p>
+```
+
+Add CSS:
+
 ```
 span { background-color: blue; }
 ```
 
-### Introduksjon til AI og ChatGPT
+### Introduction to AI and ChatGPT
 
-Åpne [ChatGPT](https://chatgpt.com/) og prøve å skrive noe.
-
-```
-Kan du gi meg de ti viktigste HTML-taggene med en tilhørende forklaring på hvordan de brukes?
-```
+Open [ChatGPT](https://chatgpt.com/) and try typing something.
 
 ```
-Jeg har en h2 tagg. Kan du gi meg CSS for å få teksten til å forandre farge og pulsere i størrelse?
+Can you give me the ten most important HTML tags with explanations of how they're used?
 ```
-Legg resultatet inn i CSS-feltet og se hva som skjer.
 
-La deltakerne leke seg en stund med forskjellige prompts mens du svarer på spørsmål, eller foreslå hva de kan utforske.
+```
+I have an h2 tag. Can you give me CSS to make the text change color and pulse in size?
+```
 
-### Oppgagve 1 - Hvordan bli oppdaget hvis man er strandet på en øde øy?
+Enter the result into the CSS field and observe the outcome.
 
-Denne oppgaven åpner for kreativie løsninger, og faktisk kan man finne en løsning ved å laste opp hele innholdet i Oppgave1/index.html til ChatGPT.
+Allow participants to explore various prompts while you answer questions or suggest exploration topics.
 
-Del en kan løses ved å endre fargene på .himmel, .himmellegeme og kanskje .skog, .strand og .havet.
+### Task 1 - How to Get Discovered if Stranded on a Deserted Island?
 
-Del to kan løses på flere måter. Noen eksempler:
-* Skrive S.O.S. i sanden på stranden.
-* Lage et bål som gir synlig røyk.
-* Legg til en båt eller flåte på havet som man kan brukes til å reise bort med.
+This task allows creative solutions. Solutions can actually be found by uploading the entire content of `Task1/index.html` to ChatGPT.
 
-Bruk ChatGPT til å implementere løsningene man ønsker, eller se hvilke løsninger ChatGPT foreslår.
+Part one can be solved by changing colors of `.sky`, `.celestial-body`, and possibly `.forest`, `.beach`, and `.ocean`.
 
-### Oppgave 2 - Lage et enkelt spill
+Part two can be solved in several ways, such as:
 
-Oppgave to starter med et område med et rundt objekt inni. Når man klikker på dette vises en alert-melding.
+- Writing "S.O.S." in the sand on the beach.
+- Creating a fire with visible smoke.
+- Adding a boat or raft to the ocean for escape.
 
-Filene `spill.css` og `spill.js` lastet.
+Use ChatGPT to implement desired solutions or see what ChatGPT suggests.
 
-Ved å laste opp de tre filene til ChatGPT kan man få hjelp til å:
+### Task 2 - Creating a Simple Game
 
-* Gi ballen bevegelse og sprette i kantene.
-* Telle opp hver gang man klikker på ballen.
-* Telle opp hver gang man bommer på ballen.
+Task two starts with an area containing a round object. Clicking it will display an alert message.
 
-Er kan det være mye opp til deltakerne selv å finne ut hva de har lyst å gjøre.
+Files `spill.css` and `spill.js` should be loaded.
+
+By uploading these three files to ChatGPT, assistance can be received to:
+
+- Make the ball move and bounce off the edges.
+- Count each click on the ball.
+- Count each miss.
+
+Participants can decide what they want to explore further.
