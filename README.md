@@ -18,7 +18,11 @@ It is recommended that participants install VS Code, Google Chrome, and a paid v
 
 This step can be done collectively before the course starts or participants can be instructed to do it beforehand.
 
-Course files should be downloaded from https://github.com/iorg1/kodekurs/download/kodekurs.zip and extracted.
+Course files should be downloaded from https://github.com/iorg1/ai-assisted-coding-for-kids and extracted.
+
+You find the download link as shown in the image below:
+
+![How to download](how-to-download.png)
 
 It is important not to open the contents of the zip file directly, as this may cause references to CSS and JavaScript files to malfunction.
 
